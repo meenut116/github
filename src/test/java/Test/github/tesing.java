@@ -18,10 +18,7 @@ public class tesing {
 	public void logout() {
 		System.out.println("logout");
 	}
-	@Test
-	public void logout2() {
-		System.out.println("logout2");
-	}
+	
 
 	// Added by sachu 
 	// Added by meenu
