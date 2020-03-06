@@ -1,0 +1,42 @@
+package com.etboss.config;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class TestBase {
+	public static WebDriver driver;
+	 public static Properties prop;
+
+	public TestBase(){
+		try {
+		prop = new Properties();
+		FileInputStream fis = new FileInputStream(
+				"/Users/meenu/eclipse-workspace/Zpageobject/src/main/java/com/etboss/config/Config.Properties");
+		prop.load(fis);
+		}
+		catch(Exception e){
+			e.printStackTrace();
+			
+		}
+	}
+
+	public WebDriver initializebrowser() throws IOException {
+		String browsername = prop.getProperty("Browser");
+		if (browsername.equals("Chrome")) {
+         driver = new ChromeDriver();
+		} else if (browsername.equals("firefox")) {
+			driver = new FirefoxDriver();
+		}
+		driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+		driver.get(prop.getProperty("URL"));	
+		return driver;
+
+	}
+
+}
