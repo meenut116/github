@@ -1,0 +1,3 @@
+give url in the propert file call them using the below code whereever you need
+
+driver.get(prop.getProperty("URL2"));
