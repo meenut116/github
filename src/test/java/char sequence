@@ -1,0 +1,17 @@
+Action method 
+public void login(String un, CharSequence se) {
+		username.sendKeys(un);
+		password.sendKeys(se);
+		submit.click();
+		
+	}
+
+
+
+testcase 
+
+@Test
+	public void login2() {
+		CharSequence password = "54646";
+		lp.login("577", password);
+	}
