@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Reression Testing">
+<listeners>
+		<listener class-name="com.qa.ExtentReportListener.ExtentReporterNG" />
+	</listeners>
+ <test name="Reression1" >
+   <classes>
+      <class name="com.etboss.testcases.LoginTest">
+   </class>
+   </classes>
+ </test>
+</suite>
